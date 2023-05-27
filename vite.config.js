@@ -1,7 +1,6 @@
 import handlebars from 'vite-plugin-handlebars';
 import { defineConfig } from 'vite'
 
-
 const basicContext = {
         name: "Tswelopele",
         email: "tswelopelemojewa@gmail.com",
@@ -20,20 +19,9 @@ const basicContext = {
         ]
     };
 
-
-export default defineConfig({
-  base : '/demo/',
-  build: {
-      rollupOptions: {
-          input : {
-              main: 'index.html'
-          }
-      },
-  },
+export default {
+  base: "demo",
   plugins: [handlebars({
-    context : {
-      basicContext
-    }
-})]
-  
-});
+    context : basicContext
+  })]
+};
